@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+    <head>
+        <title>Batalha</title>
+        <link rel='stylesheet' href='_css/css.css'>
+    </head>
+    <body>
+        <fieldset id="title1">
+            <h1>Bem vindo a Batalha!</h1>
+            <h3>versão grasshopper</h3>
+        </fieldset>
+        <p id='p1'>Este é um mini-jogo textual/visual criado por mim em javascript quando cursava o <a id="gh" href=' '>Grasshopper</a> ainda no início, esta é uma adaptação do original, juntando HTML, CSS e JS.</p>
+        <p id='p2'>Aproveite e se divirta!(terão outros mini-jogos em breve)</p>
+       
+            <fieldset>
+                <p id='results'>Resultados:</p>
+                Vitórias: <input type='text' id='v' value=0 readonly> Derrotas: <input type='text' id='d' value=0 readonly>Empates: <input type='text' id='e' value=0 readonly><p>Pontos: <span id='pontuacao'>0</span></p>
+            </fieldset>
+	    <div id='actbt'>
+                <button id='bt' class='bt'>Batalhe</button><button id="rst">↻</button>
+	    </div>
+            <fieldset id='eventos'>
+                <p id='tit'>Última Batalha:</p>
+                <p id='ct'>Nenhum Resultado Encontrado</p>
+            </fieldset>
+        <div id='popupR' class='popup'>
+            <span id='cnf'><p>Você ainda não atingiu o limite de pontos de um dos resultados, tem certeza que deseja reseta-lo?</p></span>
+	    <div id='sn'>
+		<button class='confirm' id='siu' >Sim</button>  <button class='confirm'id='no'>Não, Mudei de ideia</button>
+	    </div>
+        </div>
+        <p id='version'>v. 1.0.1 Stable</p>
+        <script src='_js/recursos.js'></script>
+    </body>
+</html>
