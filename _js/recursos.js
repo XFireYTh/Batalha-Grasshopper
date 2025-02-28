@@ -130,73 +130,39 @@ function resetOff() {
     document.getElementById('popupR').style.display = 'none';
 }
 
+function rAll() {
+    ponto.vitoria = 0;
+	ponto.derrota = 0;
+	ponto.empate = 0;
+	stateHandle(false);
+	ba.style.cursor = 'pointer';
+	let vit = document.getElementById('v');
+	let defeat = document.getElementById('d');
+	let draw = document.getElementById('e');
+	draw.value = ponto.empate;
+	defeat.value = ponto.derrota;
+	vit.value = ponto.vitoria;
+	textCamp.innerHTML = 'Nenhum Resultado Encontrado';
+	points = 0;
+    document.getElementById('pontuacao').innerText = points;
+}
+
 //Botão Reset(JSON e JS)
 var reset = document.getElementById('rst');
 reset.addEventListener('click', () => {
     if (ponto.vitoria >= 15) {
-        stateHandle(false);
-	    ba.style.cursor = 'pointer';
-	    ponto.vitoria = 0;
-	    ponto.derrota = 0;
-	    ponto.empate = 0;
-	    let vit = document.getElementById('v');
-	    let defeat = document.getElementById('d');
-    	    let draw = document.getElementById('e');
-	    draw.value = ponto.empate;
-	    defeat.value = ponto.derrota;
-	    vit.value = ponto.vitoria;
-	    textCamp.innerHTML = 'Nenhum Resultado Encontrado';
-	    points = 0;
-    	    document.getElementById('pontuacao').innerText = points;
+        rAll();
     }else if (ponto.derrota >= 15) {
-        //ba.setAttribute('enabled', ' ');
-        stateHandle(false);
-	    ba.style.cursor = 'pointer';
-	    ponto.vitoria = 0;
-	    ponto.derrota = 0;
-	    ponto.empate = 0;
-	    let vit = document.getElementById('v');
-	    let defeat = document.getElementById('d');
-    	    let draw = document.getElementById('e');
-	    draw.value = ponto.empate;
-	    defeat.value = ponto.derrota;
-	    vit.value = ponto.vitoria;
-	    textCamp.innerHTML = 'Nenhum Resultado Encontrado';
-	    points = 0;
-	    document.getElementById('pontuacao').innerText = points;
+        rAll();
     }else if (ponto.empate >= 15) {
-	    ponto.vitoria = 0;
-	    ponto.derrota = 0;
-	    ponto.empate = 0;
-	    //ba.setAttribute('enabled', ' ');
-	    stateHandle(false);
-	    ba.style.cursor = 'pointer';
-	    let vit = document.getElementById('v');
-	    let defeat = document.getElementById('d');
-	    let draw = document.getElementById('e');
-	    draw.value = ponto.empate;
-	    defeat.value = ponto.derrota;
-	    vit.value = ponto.vitoria;
-	    textCamp.innerHTML = 'Nenhum Resultado Encontrado';
-	    points = 0;
-    	    document.getElementById('pontuacao').innerText = points;
+        rAll();
     }else if (ponto.vitoria === 0 && ponto.derrota === 0 && ponto.empate === 0){
-
-	//trava do reset
-	alert('Você não pode recomeçar algo que você não começou');
-
+	    //trava do reset
+	    alert('Você não pode recomeçar algo que você não começou');
     }else{
-	//alert('O limite de Vitórias/Derrotas/Empates ainda não foi atingido');
-	resetConfirm();
+	    resetConfirm();
     }
 });
-
-//window.onclick = function(event) {
-    //var popup = document.getElementById('popup');
-    //if (event.target ==! popup) {
-	//popup.style.display = 'none';
-    //}
-//}
 
 //Mudei de ideia
 var closepr = document.getElementById('no');
