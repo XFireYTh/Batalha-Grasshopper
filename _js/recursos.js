@@ -1,3 +1,22 @@
+// Dark Mode
+
+const drkm = document.getElementById('darkmode');7
+
+if (localStorage.getItem('escuro') === 'active') {
+    document.body.classList.add('drk');
+    drkm.checked = true;
+}
+
+drkm.addEventListener('change', () => {
+    document.body.classList.toggle('drk');
+
+    if (document.body.classList.contains('drk')) {
+        localStorage.setItem('escuro', 'active');
+    }else{
+        localStorage.setItem('escuro', 'deactivated');
+    }
+});
+
 
 //(JSON) Contador: Faz o contador funcionar
 var ponto = {
@@ -199,3 +218,5 @@ var gh = document.getElementById('gh');
 gh.addEventListener('click', () => {
    alert('Este link levaria até o site do Grasshopper, mas por cortes de gastos o Google encerrou o programa em Junho de 2023. Link original: https://learn.grasshopper.app/');
 });
+
+
