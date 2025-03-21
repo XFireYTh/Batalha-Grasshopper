@@ -119,7 +119,7 @@ ba.addEventListener('click', () => {
     let draw = document.getElementById('e');
     draw.value = ponto.empate;
     }
-    
+
     //Easter Eggs
     if (points <= -600) {
 	alert('Conquista: Que Azar!, Mas continue tentando.');
