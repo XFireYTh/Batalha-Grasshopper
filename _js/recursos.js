@@ -121,24 +121,43 @@ ba.addEventListener('click', () => {
     }
     
     //Easter Eggs
-    if (points <= -600) {
-	alert('Conquista: Que Azar!, Mas continue tentando.');
-    }else if (points === 1500) {
-	alert('15 Vitórias? Vitórias combinadas com empates? Bem, esse resultado é ótimo! Parabéns, você conseguiu 1500 pontos! Consegue o melhor resultado agora?!');
-    }else if(points === 2340) {
-	alert('Parabéns! Você alcançou o Final Supremo! Já pegou todos os Easter Eggs sem ler o código fonte?');
-    }else if(points === 2000) {
-	alert('Parabens! Você alcançou um número perfeito, ou se você terminou aqui, alcançou o Final Perfeito! Consegue o aclamado Final Supremo? Nota: Não vale trapacear!');
-    }else if(ponto.derrota === 14 && ponto.vitoria === 14 && ponto.empate === 14) {
-	alert('Thanos? Não? Achei que era pois esse tipo de equilíbrio é inusitado');
-    }else if(points === 840){
-	alert('Existe outro easter egg nesta mesma pontuação, consegue saber qual?');
-    }else if(ponto.derrota === 6 && ponto.vitoria === 6 && ponto.empate === 6) {
-	alert('-.-. ...- .--- .-.. / .... ... .--- .... ..- .--- ...- -... / ...- / .-.. .... --.. .- .-.. -.-- / .-.. -. -. / .--. ..- -- .--. ..- .--. .--. .- ...-                                                7');
-    }else if(ponto.derrota === 15 && ponto.vitoria === 0 && ponto.empate === 0) {
-	alert('Ok... Esse talvez seja o Easter Egg mais raro do site, mas ok, por mais que esse seja o pior resultado, tente novamente!');
-    }
+    alert(getEasterEgg(points, ponto))
+
 });
+
+function getEasterEgg(points, ponto) {
+    if (points <= -600) {
+	    return 'Conquista: Que Azar!, Mas continue tentando.';
+    }
+    
+    if (points === 1500) {
+	    return '15 Vitórias? Vitórias combinadas com empates? Bem, esse resultado é ótimo! Parabéns, você conseguiu 1500 pontos! Consegue o melhor resultado agora?!';
+    }
+    
+    if (points === 2340) {
+	    return 'Parabéns! Você alcançou o Final Supremo! Já pegou todos os Easter Eggs sem ler o código fonte?';
+    }
+    
+    if (points === 2000) {
+	    return 'Parabens! Você alcançou um número perfeito, ou se você terminou aqui, alcançou o Final Perfeito! Consegue o aclamado Final Supremo? Nota: Não vale trapacear!';
+    }
+    
+    if (ponto.derrota === 14 && ponto.vitoria === 14 && ponto.empate === 14) {
+	    return 'Thanos? Não? Achei que era pois esse tipo de equilíbrio é inusitado';
+    }
+    
+    if (points === 840){
+	    return 'Existe outro easter egg nesta mesma pontuação, consegue saber qual?';
+    }
+    
+    if (ponto.derrota === 6 && ponto.vitoria === 6 && ponto.empate === 6) {
+	    return '-.-. ...- .--- .-.. / .... ... .--- .... ..- .--- ...- -... / ...- / .-.. .... --.. .- .-.. -.-- / .-.. -. -. / .--. ..- -- .--. ..- .--. .--. .- ...-                                                7';
+    }
+    
+    if (ponto.derrota === 15 && ponto.vitoria === 0 && ponto.empate === 0) {
+	    return 'Ok... Esse talvez seja o Easter Egg mais raro do site, mas ok, por mais que esse seja o pior resultado, tente novamente!';
+    }
+}
 
 //Função do popup
 function resetConfirm() {
@@ -219,4 +238,21 @@ gh.addEventListener('click', () => {
    alert('Este link levaria até o site do Grasshopper, mas por cortes de gastos o Google encerrou o programa em Junho de 2023. Link original: https://learn.grasshopper.app/');
 });
 
-
+//o renegado
+    // if (points <= -600) {
+	// alert('Conquista: Que Azar!, Mas continue tentando.');
+    // }else if (points === 1500) {
+	// alert('15 Vitórias? Vitórias combinadas com empates? Bem, esse resultado é ótimo! Parabéns, você conseguiu 1500 pontos! Consegue o melhor resultado agora?!');
+    // }else if(points === 2340) {
+	// alert('Parabéns! Você alcançou o Final Supremo! Já pegou todos os Easter Eggs sem ler o código fonte?');
+    // }else if(points === 2000) {
+	// alert('Parabens! Você alcançou um número perfeito, ou se você terminou aqui, alcançou o Final Perfeito! Consegue o aclamado Final Supremo? Nota: Não vale trapacear!');
+    // }else if(ponto.derrota === 14 && ponto.vitoria === 14 && ponto.empate === 14) {
+	// alert('Thanos? Não? Achei que era pois esse tipo de equilíbrio é inusitado');
+    // }else if(points === 840){
+	// alert('Existe outro easter egg nesta mesma pontuação, consegue saber qual?');
+    // }else if(ponto.derrota === 6 && ponto.vitoria === 6 && ponto.empate === 6) {
+	// alert('-.-. ...- .--- .-.. / .... ... .--- .... ..- .--- ...- -... / ...- / .-.. .... --.. .- .-.. -.-- / .-.. -. -. / .--. ..- -- .--. ..- .--. .--. .- ...-                                                7');
+    // }else if(ponto.derrota === 15 && ponto.vitoria === 0 && ponto.empate === 0) {
+	// alert('Ok... Esse talvez seja o Easter Egg mais raro do site, mas ok, por mais que esse seja o pior resultado, tente novamente!');
+    // }
