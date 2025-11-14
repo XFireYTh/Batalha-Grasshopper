@@ -1,30 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
 body {
     background-color: rgb(255, 255, 255);
     color: black;
     transition: background 0.2s, color 0.2s;
 }
 
-#title1 {
+header {
     background-color: rgb(33, 92, 1);
-    border-style: solid;
-    border-color: rgb(33, 92, 1);
-    border-radius: 0px;
     width: 100%;
-    margin: -10px 0px 5px -10px;
+    max-height: 350px;
     transition: background 0.3s, color 0.3s;
+    margin-bottom: 10px;
+    padding: 5px 0;
 }
 
-h1 {
+header div {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header h1 {
     font-family: arial, helvetica, sans-serif;
     color: white;
     margin: 0px 2px 2px 0px;
     font-size: 75px;
 }
 
-h3 {
+header h3 {
     color: orange;
     font-family: helvetica;
-    margin: 0px 2px 2px 5px;
+    margin: 0 10px;
+    margin-bottom: 12px;
     font-size: 20px;
 }
 
@@ -33,44 +45,55 @@ p {
     font-size: 30px;
 }
 
+main {
+    margin: 0 auto;
+    width: 80%;
+}
+
 #actbt {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 35px;
+    margin: 10px 0;
+}
+
+#actbt button {
+    margin: 5px;
 }
 
 #bt {
-    color: white;
-    background-color: #0822c9;
+    color: black;
+    background-color: rgb(133, 133, 133);
     border-width: 2.5px;
     border-radius: 5px;
     border-color: black;
     font-size: 29px;
-    transition:0.3s;
-    position: relative;
-    left: 45%;
+    transition:0.5s;
+    display: flex;
 }
 
 #bt:active {
     transform: translateY(1px);
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 #bt:hover {
-    transition: 0.3s;
+    transition: 0.5s;
     cursor: pointer;
-    color: white;
-    background-color: #11acd6;
+    background-color: #d6d6d6;
 }
 
-fieldset {
+.exibicao {
     border-radius: 5px;
-    border-style: ridge;
     background-color: #d8d8d8;
     color: #000000;
     font-family: verdana;
-    font-size: 25px
+    font-size: 25px;
+    padding: 5px;
+    margin: 10px 0;
+    transition: 0.5s;
 }
 
 #results {
@@ -80,12 +103,14 @@ fieldset {
 
 #version {
   position: fixed;
-  bottom: -1%;
-  right: 0.4%;
-  font-size: 9px;
+  border-radius: 15px;
+  bottom: 2px;
+  right: 2px;
+  font-size: 15px;
   color: rgb(0,0,0);
   background-color: rgb(232,232,232);
-  opacity: 0.5;
+  opacity: 1;
+  padding: 4px;
 }
 
 input {
@@ -100,18 +125,21 @@ input {
     font-family: georgia;
     font-size: 25px;
     color: #75605c;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 #ct {
-    font-size: 15px;
+    font-size: 22px;
     color: #0e0d0d;
     font-family: arial;
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 #eventos {
     Background-color: #bbbbbb;
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.5s;
 }
 
 #gh {
@@ -124,26 +152,32 @@ input {
 #gh:hover {
     text-decoration: underline;
     color: green;
-    text-decoration-color: rgba(227, 249, 252, 0.4);
+    text-decoration-color: rgba(0, 128, 0, 0.4);
     transition: 0.4s;
 }
 
 #rst {
-    background-color: black;
-    color: white;
-    font-size: 26px;
+    background-color: rgb(133, 133, 133);
+    color: black;
+    font-size: 24px;
+    border-color: gray;
+    border-width: 2.5px;
     border-radius: 5px;
-    position: relative;
-    left: 46%;
     transition: 0.5s;
-    border-style: ridge;
+    display: flex;
+    padding: 0 10px;
+    cursor: pointer;
+    
 }
 
 #rst:active {
-    border-style: groove;
     transform: translateY(1px);
     transition: 0.5s;
+}
 
+#rst:hover {
+    background-color: #cacaca;
+    transition: 0.5s;
 }
 
 #popupR {
@@ -152,43 +186,52 @@ input {
     display: none;
     width: 500px;
     height: 250px;
-    top: 38%;
-    left: 30%;
-    background-color: #878787;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #000000;
     border-radius: 5px;
-    opacity: 0.95;
+    opacity: 0.85;
     overflow: auto;
     z-index: 1;
+    padding: 5px;
 }
 
 #cnf {
     font-family: Arial, sans-serif;
     text-align: center;
+    display: block;
 }
 
 #sn {
-    position: absolute;
-    top: 65%;
+    display: flex;
     width: 100%;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
 }
 
 .popup .confirm {
-    background-color: black;
+    background-color: rgb(22, 22, 22);
     color: #ffffff;
-    border: 5px;
+    border: 2px;
     border-color: white;
-    border-radius: 7px; 
+    border-radius: 10px; 
     font-size: 20px;
     font-family: "Times New Roman", Times, serif;
-    border-style: outset;
-    transition: 0.6s
+    transition: 0.3s;
+    margin: 5px;
+    padding: 5px;
 }
 
 .popup .confirm:hover {
     cursor: pointer;
-    border-color: black;
-    transition: 0.6s;
+    background-color: #ececec;
+    color: black;
+    transition: 0.3s;
 }
 
 #darkmode {
@@ -199,14 +242,16 @@ input {
 .drk {
     background-color: black;
     color: white;
+    transition: 0.5s;
 }
 
 .drk #title1 {
     background-color: rgb(0, 65, 0);
 }
-.drk fieldset {
+.drk .exibicao   {
     background-color: #2e2e2e;
     color: rgb(224, 224, 224);
+    transition: 0.5s;
 }
 
 .drk #gh {
@@ -228,4 +273,50 @@ input {
 
 .drk #ct {
     color: white;
+}
+
+.drk #bt {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    transition: 0.5s;
+}
+
+.drk #bt:hover {
+    background-color: #3a3a3a;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.drk #rst {
+    background-color: rgb(31, 31, 31);
+    color: white;
+    transition: 0.5s;
+}
+
+.drk #rst:hover {
+    background-color: #3a3a3a;
+    transition: 0.5s;
+}
+
+.pontuacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.pontuacao input {
+    margin-right: 7px;
+}
+
+.pontuacao label {
+    margin-right: 4px;
+}
+
+.darkTrigger {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }

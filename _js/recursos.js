@@ -58,6 +58,15 @@ function pickrundom(mArray){
    return Math.floor(Math.random() * mArray.length);
 }
 
+// Função para melhor estilização
+function trava(botao, variavel, pontos) {
+    if (variavel == pontos) {
+        stateHandle(true);
+        botao.style.cursor = "not-allowed";
+    }
+}
+
+
 //(JS) Função do Botão
 ba.addEventListener('click', () => {
     //(JS) Valor Aleatório
@@ -67,67 +76,59 @@ ba.addEventListener('click', () => {
         //(C++) Funcionalidade do Contador
         ponto.vitoria++;
 
-	if (ponto.vitoria === 15) {
-        stateHandle(true);
-	    ba.style.cursor = 'not-allowed';
-	}
+	    trava(ba, ponto.vitoria, 15)
         //(JS HTML DOM) Complemento
         textCamp.innerHTML = '<p>Uau, você venceu! Vá para a próxima batalha e vença novamente!</p>';
 
         //(JS & JSON) Contador
         let vit = document.getElementById('v');
         vit.value = ponto.vitoria;
-	pointModfier(100);
+	    pointModfier(100);
 
-    }else if (Battle[vlr] === 'You Lose') {
+    } else if (Battle[vlr] === 'You Lose') {
 
         //(C++) Funcionalidade do Contador
         ponto.derrota++;
 
-	//Pontuação
-	pointModfier(-100);
+	    //Pontuação
+	    pointModfier(-100);
 
-	if (ponto.derrota === 15) {
-            //ba.setAttribute('disabled', ' ');
-            stateHandle(true);
-	    ba.style.cursor = 'not-allowed';
-	}
+	    trava(ba, ponto.derrota, 15);
 
-    //(JS HTML DOM) Complemento
-    textCamp.innerHTML = '<p>Você perdeu! Mas você pode ir em mais uma batalha e tentar vencer.</p>';
+        //(JS HTML DOM) Complemento
+        textCamp.innerHTML = '<p>Você perdeu! Mas você pode ir em mais uma batalha e tentar vencer.</p>';
 
-    //(JS & JSON) Contador
-    let defeat = document.getElementById('d');
-    defeat.value = ponto.derrota;
+        //(JS & JSON) Contador
+        let defeat = document.getElementById('d');
+        defeat.value = ponto.derrota;
+
     }else{
         //(C++) Funcionalidade do Contador
         ponto.empate++;
 
-	if (ponto.empate === 15) {
-       // ba.setAttribute('disabled', ' ');
-            stateHandle(true);
-	    ba.style.cursor = 'not-allowed';
-	}
+	    trava(ba, ponto.empate, 15);
 	
-	//Pontuação
-	pointModfier(60);
+        //Pontuação
+        pointModfier(60);
 
-    //(JS HTML DOM) Complemento
-    textCamp.innerHTML = '<p>Os dois caíram, resultando em um empate! Da próxima você consegue!</p>';
+        //(JS HTML DOM) Complemento
+        textCamp.innerHTML = '<p>Os dois caíram, resultando em um empate! Da próxima você consegue!</p>';
 
-    //(JS & JSON) Contador
-    let draw = document.getElementById('e');
-    draw.value = ponto.empate;
+        //(JS & JSON) Contador
+        let draw = document.getElementById('e');
+        draw.value = ponto.empate;
     }
     
     //Easter Eggs
-    alert(getEasterEgg(points, ponto))
+    if (getEasterEgg(points, ponto)) {
+        alert("Conquista alcançada: ". getEasterEgg(points, ponto));
+    }
 
 });
 
 function getEasterEgg(points, ponto) {
     if (points <= -600) {
-	    return 'Conquista: Que Azar!, Mas continue tentando.';
+	    return 'Que Azar!, Mas continue tentando.';
     }
     
     if (points === 1500) {
@@ -161,7 +162,7 @@ function getEasterEgg(points, ponto) {
 
 //Função do popup
 function resetConfirm() {
-    document.getElementById('popupR').style.display = 'block';
+    document.getElementById('popupR').style.display = 'flex';
 }
 
 function resetOff() {
@@ -180,7 +181,7 @@ function rAll() {
 	draw.value = ponto.empate;
 	defeat.value = ponto.derrota;
 	vit.value = ponto.vitoria;
-	textCamp.innerHTML = 'Nenhum Resultado Encontrado';
+	textCamp.innerHTML = '<p>Nenhum Resultado Encontrado<p> ';
 	points = 0;
     document.getElementById('pontuacao').innerText = points;
 }
