@@ -8,6 +8,8 @@ body {
     height: 100vh;
 }
 
+/*------ Header ------*/
+
 header {
     background-color: green;
     border-bottom: 5px solid black;
@@ -35,8 +37,171 @@ header div h2 {
     color: orange;
 }
 
+/*------ Main ------*/
+
 main {
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+}
+
+#aviso {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightgoldenrodyellow;
+    padding: 3px;
+}
+
+#aviso h1 {
+    font-size: 38px;
+    padding: 5px;
+    color: green;
+}
+
+/*--- Contadores ---*/
+
+.contadores {
+    background-color: lightgray;
+    width: 90%;
+    min-height: 5vh;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid rgb(15,15,15);
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+.contador {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 2px;
+}
+
+#vitoria, #derrota, #empates {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+    padding: 5px 0;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.desc {
+    text-align: center;
+}
+
+/*--- Resultado ---*/
+
+.resultado {
+    border: 2px solid rgb(15,15,15);
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-top: none;
+    margin-top: -12px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding-top: 20px;
+}
+
+#resultadoTexto {
+    padding: 8px 0;
+}
+
+/*------ Modo Escuro ------*/
+
+.dark {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    background-color: rgb(187, 187, 187);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 15px;
+    position: absolute;
+    left: 95vw;
+    top: 20vh;
+    transition: .5s;
+}
+
+.dark label {
+    display: none;
+    width: 60px;
+}
+
+.dark #drksw {
+    display: none;
+}
+
+.dark:hover #drksw {
+    display: flex;
+}
+
+.dark:hover label {
+    display: flex;
+}
+
+.dark:hover {
+    left: 86vw;
+}
+
+.escurativo {
+    background-color: rgb(40, 40, 40);
+    color: rgb(236, 236, 236);
+}
+
+/*------ Botoes ------*/
+
+#round, #reset {
+    background-color: rgb(17, 17, 17);
+    color: rgb(249, 249, 249);
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+}
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+#reset {
+    padding: 5px 10px;
+    text-align: center;
+    padding-left: 13px;
+}
+
+/*------ Versionamento ------*/
+
+#versionCtl {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: none;
+    display: inline;
+    font-family:'Courier New', Courier, monospace;
+    position: absolute;
+    bottom: 0vh;
+    font-size: 12px;
+    right: 1vw;
 }

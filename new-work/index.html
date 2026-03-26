@@ -14,26 +14,48 @@
             </div>
         </header>
         <main>
+
             <div id="aviso">
                 <h1>Aviso!</h1>
                 <p>Este site usa como base o arquivo original do Batalha Grasshopper, que pode ser acessado <a href="../index.html">clicando aqui</a></p>
             </div>
+
+            <div class="dark">
+                <img height="35px" src="resources/night-mode.png" alt="https://www.flaticon.com/authors/mpanicon - Dark Mode">
+                <input type="checkbox" id="drksw">
+                <label for="drksw">Modo Escuro</label>
+            </div>
+
             <div class="contadores">
                 <div class="contador">
                     <h1 id="vitoria">0</h1>
+                    <p class="desc">Vitorias</p>
                 </div>
                 <div class="contador">
                     <h1 id="derrota">0</h1>
+                    <p class="desc">Derrotas</p>
                 </div>
                 <div class="contador">
                     <h1 id="empates">0</h1>
+                    <p class="desc">Empates</p>
                 </div>
-               
             </div>
-            
+
+            <div class="resultado">
+                <h1>Resultado:</h1>
+                <p id="resultadoTexto">Nenhum resultado registrado</p>
+            </div>
+
+            <div class="botoes">
+                <button id="round">Batalhar</button>
+                <button type="reset" id="reset">⟳</button>
+            </div>
+
         </main>
 
+        <p id="versionCtl">v. 2.0.001 dev</p>
 
+        <footer></footer>
 
 
         <script src="script/script.js"></script>
