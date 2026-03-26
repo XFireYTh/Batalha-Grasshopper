@@ -45,6 +45,16 @@ p {
     font-size: 30px;
 }
 
+header .other {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+
 main {
     margin: 0 auto;
     width: 80%;
