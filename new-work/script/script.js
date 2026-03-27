@@ -8,7 +8,10 @@ const empc = document.getElementById('empates')
 //--- Botões
 const batb = document.getElementById('round')
 const rstb = document.getElementById('reset')
+const close = document.getElementById("close")
 
+//--- Popups
+const aviso = document.getElementById("aviso")
 
 // Variáveis necessárias
 let pontuacao = {
@@ -39,6 +42,27 @@ function disableElement(element, parameter) {
 function randomPick(array) {
     return Math.floor(Math.random * array.length)
 }
+
+// Funções Diversas e Específicas
+
+function popupAviso() {
+    if (localStorage.getItem("aviso") == "oculto") {
+        aviso.style.display = "none"
+    } else {
+        aviso.style.display = "flex"
+    }
+}
+
+// Ações Diversas
+
+close.addEventListener("click", () => {
+    if (aviso.style.display == "flex") {
+        aviso.style.display = "none"
+        localStorage.setItem("aviso", "oculto")
+    }
+})
+
+popupAviso()
 
 
 

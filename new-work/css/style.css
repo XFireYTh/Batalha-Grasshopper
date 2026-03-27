@@ -57,7 +57,8 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgoldenrodyellow;
     padding: 3px;
-    left: 2vh;
+    left: 27vw;
+    top: 50vh;
 }
 
 #aviso h1 {
@@ -67,8 +68,12 @@ main {
 }
 
 #close {
-    padding: 2px 6px;
+    padding: 1px 7px;
     position: absolute;
+    border-radius: 100%;
+    left: 95%;
+    top: 10%;
+    text-align: center;
 }
 
 /*--- Contadores ---*/
@@ -139,7 +144,7 @@ main {
     padding: 5px;
     border-radius: 15px;
     position: absolute;
-    left: 95vw;
+    left: 97vw;
     top: 20vh;
     transition: .5s;
 }
@@ -162,7 +167,7 @@ main {
 }
 
 .dark:hover {
-    left: 86vw;
+    left: 92vw;
 }
 
 .escurativo {
