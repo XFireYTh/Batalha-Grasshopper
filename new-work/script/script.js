@@ -18,18 +18,27 @@ let pontuacao = {
 }
 
 // Funções necessárias
-function pontosAd(contador, variavelContadora) {
-    variavelContadora++
-    contador.textContent = variavelContadora
+function pontosAd(contador, variavelContadora, JSONcontador) {
+    JSONcontador[variavelContadora]++
+    contador.textContent = JSONcontador[variavelContadora]
 }
 
-function travaJSON(limite, jsonContador) {
-    for (let i = 0; i < jsonContador.length; i++) {
-        if (jsonContador[i] == limite) {
-            return true
-        }
+function travaJSON(limite, jsonContador, contador) {
+    if (jsonContador[contador] == limite) {
+        return true
     }
     return false
 }
 
-console.log(travaJSON(0, pontuacao))
+function disableElement(element, parameter) {
+    if (parameter == true) {
+        element.disabled = true
+    }
+}
+
+function randomPick(array) {
+    return Math.floor(Math.random * array.length)
+}
+
+
+

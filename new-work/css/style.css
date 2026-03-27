@@ -46,7 +46,7 @@ main {
 }
 
 #aviso {
-    width: 100%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,12 +57,18 @@ main {
     font-family: Arial, Helvetica, sans-serif;
     background-color: lightgoldenrodyellow;
     padding: 3px;
+    left: 2vh;
 }
 
 #aviso h1 {
     font-size: 38px;
     padding: 5px;
     color: green;
+}
+
+#close {
+    padding: 2px 6px;
+    position: absolute;
 }
 
 /*--- Contadores ---*/
@@ -173,6 +179,11 @@ main {
     font-size: 25px;
     border-radius: 5px;
     border: none;
+    transition: .3s;
+}
+
+#round:active, #reset:active {
+    transform: translateY(2px);
 }
 
 .botoes {
@@ -204,4 +215,43 @@ main {
     bottom: 0vh;
     font-size: 12px;
     right: 1vw;
+}
+
+/*------ PopUps ------*/
+
+.popup {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: rgb(224, 224, 224);
+    padding: 10px 0;
+    width: 15vw;
+    border-radius: 15px;
+    border: 1px solid black;
+    position: absolute;
+    top: 50vh;
+    left: 42vw;
+}
+
+
+.confirmas {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirma {
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid black;
+    transition: .4s;
+}
+
+.confirma:active {
+    transform: translateY(2px);
 }
