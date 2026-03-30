@@ -67,38 +67,38 @@ ba.addEventListener('click', () => {
         //(C++) Funcionalidade do Contador
         ponto.vitoria++;
 
-	if (ponto.vitoria === 15) {
-        stateHandle(true);
-	    ba.style.cursor = 'not-allowed';
-	}
+        if (ponto.vitoria === 15) {
+            stateHandle(true);
+            ba.style.cursor = 'not-allowed';
+        }
         //(JS HTML DOM) Complemento
         textCamp.innerHTML = '<p>Uau, você venceu! Vá para a próxima batalha e vença novamente!</p>';
 
         //(JS & JSON) Contador
         let vit = document.getElementById('v');
         vit.value = ponto.vitoria;
-	pointModfier(100);
+	    
 
     }else if (Battle[vlr] === 'You Lose') {
 
         //(C++) Funcionalidade do Contador
         ponto.derrota++;
 
-	//Pontuação
-	pointModfier(-100);
+        //Pontuação
+        pointModfier(-100);
 
-	if (ponto.derrota === 15) {
-            //ba.setAttribute('disabled', ' ');
-            stateHandle(true);
-	    ba.style.cursor = 'not-allowed';
-	}
+        if (ponto.derrota === 15) {
+                //ba.setAttribute('disabled', ' ');
+                stateHandle(true);
+            ba.style.cursor = 'not-allowed';
+        }
 
-    //(JS HTML DOM) Complemento
-    textCamp.innerHTML = '<p>Você perdeu! Mas você pode ir em mais uma batalha e tentar vencer.</p>';
+        //(JS HTML DOM) Complemento
+        textCamp.innerHTML = '<p>Você perdeu! Mas você pode ir em mais uma batalha e tentar vencer.</p>';
 
-    //(JS & JSON) Contador
-    let defeat = document.getElementById('d');
-    defeat.value = ponto.derrota;
+        //(JS & JSON) Contador
+        let defeat = document.getElementById('d');
+        defeat.value = ponto.derrota;
     }else{
         //(C++) Funcionalidade do Contador
         ponto.empate++;

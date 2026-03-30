@@ -130,6 +130,22 @@ main {
     padding: 8px 0;
 }
 
+.pontos {
+    border-top: 2px dotted rgba(15,15,15,0.4);
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+/*
+#pontosTxt {
+    display: inline;
+}
+
+#valorPontos {
+    display: inline;
+}
+*/
+
 /*------ Modo Escuro ------*/
 
 .dark {
