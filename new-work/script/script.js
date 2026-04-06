@@ -9,9 +9,11 @@ const empc = document.getElementById('empates')
 const batb = document.getElementById('round')
 const rstb = document.getElementById('reset')
 const close = document.getElementById("close")
+const confirmR = document.getElementsByClassName("confirma")
 
 //--- Popups
 const aviso = document.getElementById("aviso")
+const popupReset = document.getElementById("popupReset")
 
 //--- Campos de Texto 
 const descResultado = document.getElementById('resultadoTexto')
@@ -49,6 +51,8 @@ function travaJSON(limite, jsonContador, contador) {
 function desabilitar(elemento, parametro) {
     if (parametro == true) {
         elemento.disabled = true
+    } else {
+        elemento.disabled = false
     }
 }
 
@@ -63,6 +67,29 @@ function sincronizarPontos(variavelPontos, campoPontosDOM, pontuacaoAdicional = 
     let novosPontos = variavelPontos += pontuacaoAdicional
     campoPontosDOM.textContent = novosPontos
     return novosPontos
+}
+
+function mostrarPopup(alvo) {
+    alvo.style.display = "flex"
+}
+
+function ocultarPopup(alvo) {
+    alvo.style.display = "none"
+}
+
+function reiniciarContador(contador, contadorDOM) {
+    contador = 0
+    contadorDOM.textContent = 0
+    return contador
+}
+
+function resetPontos(objetoContador) {
+    Object.keys(objetoContador).forEach(valor => {
+        objetoContador[valor]  = 0
+    })
+    vitc.textContent = 0
+    derc.textContent = 0
+    empc.textContent = 0
 }
 
 // Funções Diversas e Específicas
@@ -114,11 +141,47 @@ batb.addEventListener("click", () => {
     let dert = travaJSON(15, pontuacao, 'derrota')
     let empt = travaJSON(15, pontuacao, 'empate')
 
-    desabilitar(batb, vitt)
-    desabilitar(batb, dert)
-    desabilitar(batb ,empt)
-
-    console.log(contadorPontos)
+    if (vitt) {
+        desabilitar(batb, vitt)
+    }
+    if (dert) {
+        desabilitar(batb, dert)
+    }   
+    if (empt) {
+        desabilitar(batb ,empt)
+    } 
+    
+    
 
 
 })
+
+
+//--- Botão reset e botões popup
+
+rstb.addEventListener('click', () => {
+    let vitt = travaJSON(15, pontuacao, 'vitoria')
+    let dert = travaJSON(15, pontuacao, 'derrota')
+    let empt = travaJSON(15, pontuacao, 'empate')
+    
+    if (vitt || dert || empt) {
+        resetPontos(pontuacao)
+        desabilitar(batb, false)
+        contadorPontos = reiniciarContador(contadorPontos, pontosTexto)
+        return true
+    }
+
+    mostrarPopup(popupReset)
+})
+
+confirmR[0].addEventListener("click", () => {
+    resetPontos(pontuacao)
+    ocultarPopup(popupReset)
+    contadorPontos = reiniciarContador(contadorPontos, pontosTexto)
+})
+
+confirmR[1].addEventListener("click", () => {
+    ocultarPopup(popupReset)
+})
+
+//--- Easter Eggs

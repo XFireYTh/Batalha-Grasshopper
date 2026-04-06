@@ -43,6 +43,7 @@ main {
     width: 80%;
     margin: 0 auto;
     margin-top: 20px;
+    height: 90vh;
 }
 
 #aviso {
@@ -232,10 +233,11 @@ main {
     border-bottom: none;
     display: inline;
     font-family:'Courier New', Courier, monospace;
-    position: absolute;
+    position: fixed;
     bottom: 0vh;
     font-size: 12px;
     right: 1vw;
+    background-color: rgba(245,245,245,0.4);
 }
 
 /*------ PopUps ------*/
@@ -252,8 +254,9 @@ main {
     border-radius: 15px;
     border: 1px solid black;
     position: absolute;
-    top: 50vh;
+    top: 44vh;
     left: 42vw;
+    transition: .4s;
 }
 
 
@@ -275,4 +278,60 @@ main {
 
 .confirma:active {
     transform: translateY(2px);
+}
+
+/*------ Footer ------*/
+footer {
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    margin-top: 15px;
+    background-color: green;
+    bottom: 0%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .organizador {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grassFoot {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#grasshopper_logo {
+    border-radius: 15px;
+    transition: 2s;
+}
+
+
+
+.organizador label {
+    border-left: 2px solid #eeeeee;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-left: 8px;
+    text-align: center;
+    font-size: 20px;
+    color: #eeeeee;
+}
+
+#ftbar {
+    height: 70%;
+    width: 0px;
+    border: 1px solid white;
+    margin: 0 20px;
+}
+
+.creditos {
+    width: 30%;
+    color: #eeeeee;
 }
